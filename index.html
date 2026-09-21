@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#090d10" />
+    <meta
+      name="description"
+      content="夜明けのない環状都市を歩き、無駄なものまで眺めるハードボイルド探偵ADV。"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23090d10'/%3E%3Cpath d='M14 13h9l9 30 9-30h9L36 53h-8z' fill='%23c6a15b'/%3E%3C/svg%3E"
+    />
+    <title>私立探偵ヴァン・レイ ― 百年目の乗客</title>
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <script src="game.js?v=8" defer></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <audio id="jazz-player" preload="auto" loop playsinline>
+      <source src="assets/nocturne-jazz-loop.ogg" type="audio/ogg; codecs=opus" />
+      <source src="assets/nocturne-jazz-loop.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main id="app">
+      <section id="title-screen" class="title-screen" aria-labelledby="game-title">
+        <div class="title-backdrop" aria-hidden="true">
+          <div class="orbit-line orbit-line-a"></div>
+          <div class="orbit-line orbit-line-b"></div>
+          <div class="dock-beacon"></div>
+        </div>
+
+        <div class="title-content">
+          <p class="kicker">VAN RAY · CASE FILE 038</p>
+          <h1 id="game-title">
+            <span>百年目の</span>
+            <span>乗客</span>
+          </h1>
+          <div class="title-rule"></div>
+          <p class="title-place">環状都市ノクターン｜第三宇宙港｜05:12</p>
+          <p class="title-intro">
+            百年前に死んだ船が帰ってきた。<br />乗客二百八十一名、全員生存。
+          </p>
+
+          <div class="title-actions">
+            <button id="start-button" class="primary-button" type="button">
+              <span class="button-index">01</span>
+              捜査を始める
+            </button>
+            <button id="continue-button" class="secondary-button" type="button" hidden>
+              続きから
+            </button>
+          </div>
+
+          <p class="title-credit">原作「宇宙船日誌 #112–113」／ なまけもの猫AI</p>
+        </div>
+
+        <aside class="title-case-card" aria-label="事件概要">
+          <p>ARRIVAL LOG</p>
+          <strong>ELPIS</strong>
+          <dl>
+            <div><dt>消息不明</dt><dd>103年</dd></div>
+            <div><dt>乗客・乗員</dt><dd>281名</dd></div>
+            <div><dt>生存</dt><dd>281名</dd></div>
+          </dl>
+          <span class="case-status">IDENTITY / UNCONFIRMED</span>
+        </aside>
+      </section>
+
+      <section id="game-screen" class="game-screen" hidden aria-label="ゲーム画面">
+        <header class="game-header">
+          <div class="case-mark">
+            <span>CASE</span>
+            <strong>038</strong>
+          </div>
+          <div class="location-readout">
+            <span id="chapter-label">第一章</span>
+            <strong id="location-label">第三宇宙港</strong>
+          </div>
+          <div class="header-meta">
+            <span id="time-label">05:12</span>
+            <span id="observation-count">観察 0</span>
+            <button id="sound-button" class="icon-button" type="button" aria-pressed="false">
+              JAZZ OFF
+            </button>
+            <button id="notes-button" class="icon-button" type="button">捜査メモ</button>
+            <button
+              id="command-toggle"
+              class="command-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="command-panel"
+            >
+              <span>捜査</span>
+              <strong id="command-current">見る</strong>
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="orientation-gate" role="status">
+          <span class="rotate-phone" aria-hidden="true">▱</span>
+          <strong>端末を横向きにしてください</strong>
+          <small>画像と文章を一画面で表示します</small>
+          <button id="landscape-button" class="primary-button small" type="button">横画面で表示</button>
+        </div>
+
+        <div class="game-layout">
+          <section class="scene-panel" aria-labelledby="scene-heading">
+            <div class="scene-art" id="scene-art">
+              <div class="scene-backdrop" id="scene-backdrop" role="img" aria-label="第三宇宙港に停泊する客船エルピス"></div>
+              <div class="scene-vignette" aria-hidden="true"></div>
+
+              <section id="prologue-panel" class="prologue-panel" hidden aria-live="polite">
+                <div class="prologue-copy">
+                  <div class="prologue-meta">
+                    <span id="prologue-eyebrow">RING CITY NOCTURNE</span>
+                    <span id="prologue-number">01 / 04</span>
+                  </div>
+                  <h2 id="prologue-title">夜明けのない街</h2>
+                  <div class="prologue-rule" aria-hidden="true"></div>
+                  <p id="prologue-text"></p>
+                  <button id="prologue-next" class="primary-button" type="button">探偵を知る</button>
+                </div>
+              </section>
+
+              <div id="speaker-stage" class="speaker-stage" hidden>
+                <div id="speaker-stage-image" class="speaker-stage-image" role="img" aria-label=""></div>
+                <span id="speaker-stage-label" class="speaker-stage-label"></span>
+              </div>
+
+              <div id="chapter-card" class="chapter-card" hidden>
+                <p>VAN RAY · CASE FILE 038</p>
+                <span id="chapter-card-number">CHAPTER 01</span>
+                <h3 id="chapter-card-title">第一章　帰港</h3>
+                <div class="chapter-card-rule"></div>
+                <small id="chapter-card-place">第三宇宙港｜05:12</small>
+                <button id="chapter-continue" class="primary-button" type="button">この章を始める</button>
+              </div>
+
+              <div class="scene-readout" aria-hidden="true">
+                <span id="scene-code">NOC / DOCK 03</span>
+                <strong id="scene-word">ELPIS</strong>
+              </div>
+
+              <div id="inspection-window" class="inspection-window" hidden>
+                <div class="inspection-topline">
+                  <span id="inspection-kind">OBSERVATION</span>
+                  <span id="inspection-number">01</span>
+                </div>
+                <div id="inspection-image" class="inspection-image" role="img" aria-label=""></div>
+                <div class="inspection-caption">
+                  <span>SELECTED</span>
+                  <strong id="inspection-label">客船《エルピス》</strong>
+                </div>
+              </div>
+
+              <div class="scene-caption">
+                <div>
+                <p id="scene-eyebrow">RING CITY NOCTURNE</p>
+                <h2 id="scene-heading">第三宇宙港</h2>
+                </div>
+                <p id="scene-caption-text">夜明けのない街にも、朝はある。</p>
+              </div>
+            </div>
+
+            <section
+              id="dialogue-panel"
+              class="dialogue-panel"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <div class="speaker-column">
+                <div id="speaker-portrait" class="speaker-portrait" role="img" aria-label="ヴァン・レイ"></div>
+                <div>
+                  <span>SPEAKER</span>
+                  <strong id="speaker-name">ヴァン・レイ</strong>
+                </div>
+              </div>
+              <button id="dialogue-button" class="dialogue-button" type="button">
+                <span id="dialogue-text">雨は降っていない。だが、街はいつも濡れている。</span>
+                <span class="advance-mark" aria-hidden="true">▼</span>
+              </button>
+            </section>
+          </section>
+
+          <button id="command-scrim" class="command-scrim" type="button" aria-label="捜査メニューを閉じる" hidden></button>
+          <aside id="command-panel" class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-panel-title" hidden>
+            <div class="command-panel-header">
+              <div>
+                <span>CASE 038 / ACTION</span>
+                <h2 id="command-panel-title">捜査コマンド</h2>
+              </div>
+              <button id="command-close" class="close-button" type="button" aria-label="捜査メニューを閉じる">×</button>
+            </div>
+            <div class="city-pulse" aria-live="off">
+              <span>NOCTURNE / LIVE</span>
+              <p id="city-pulse-text">内環線は翠江区で十二分遅延。振替便は第六層から発車します。</p>
+            </div>
+            <div id="command-verbs-level" class="command-level">
+              <p class="command-step"><span>01</span> 行動を選ぶ</p>
+              <nav class="verb-list" id="verb-list" aria-label="コマンド">
+                <button class="verb-button is-active" type="button" data-verb="look">
+                  <span>01</span><strong>見る</strong><small>物と風景を観察する</small>
+                </button>
+                <button class="verb-button" type="button" data-verb="talk">
+                  <span>02</span><strong>話す</strong><small>その場の人物に聞く</small>
+                </button>
+                <button class="verb-button" type="button" data-verb="think">
+                  <span>03</span><strong>考える</strong><small>手がかりを整理する</small>
+                </button>
+                <button class="verb-button" type="button" data-verb="move">
+                  <span>04</span><strong>移動する</strong><small>場所を変える</small>
+                </button>
+              </nav>
+            </div>
+
+            <div id="command-targets-level" class="command-level" hidden>
+              <button id="command-back" class="command-back" type="button">← 行動を選び直す</button>
+              <div class="target-section">
+                <div class="target-heading">
+                  <span><b>02</b> <span id="target-label">見る</span></span>
+                  <span id="target-hint">気になるものを選ぶ</span>
+                </div>
+                <div id="target-list" class="target-list" role="list"></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <section id="ending-screen" class="ending-screen" hidden aria-labelledby="ending-title">
+          <div class="ending-card">
+            <p class="kicker">CASE FILE 038 / CLOSED</p>
+            <h2 id="ending-title">百年目の乗客</h2>
+            <p class="ending-quote" id="ending-quote"></p>
+            <div class="ending-observation">
+              <span>この街で見たもの</span>
+              <strong id="ending-count">0</strong>
+              <small id="ending-total">/ 0</small>
+            </div>
+            <p class="ending-note" id="ending-note"></p>
+            <p class="ending-credit">THE END · PRIVATE INVESTIGATOR VAN RAY / CASE 038</p>
+            <div class="ending-actions">
+              <button id="return-office" class="secondary-button" type="button">もう少し街に残る</button>
+              <button id="close-case" class="primary-button" type="button">事件簿を閉じる</button>
+            </div>
+          </div>
+        </section>
+
+        <footer class="game-footer">
+          <span>SPACE / ENTER：送る</span>
+          <span>1–4：コマンド</span>
+          <span id="autosave-label">AUTOSAVE</span>
+        </footer>
+      </section>
+    </main>
+
+    <dialog id="notes-dialog" class="notes-dialog">
+      <div class="notes-header">
+        <div>
+          <p>VAN RAY / PRIVATE NOTES</p>
+          <h2>捜査メモ</h2>
+        </div>
+        <button id="close-notes" class="close-button" type="button" aria-label="捜査メモを閉じる">×</button>
+      </div>
+      <div class="notes-body">
+        <section class="detective-profile">
+          <div id="profile-portrait" class="profile-portrait" role="img" aria-label="私立探偵ヴァン・レイ"></div>
+          <div>
+            <h3>探偵プロフィール</h3>
+            <h4>ヴァン・レイ</h4>
+            <p class="profile-meta">46歳｜灰鐘区生まれ｜元・港湾事故調査官</p>
+            <p>低層の煉瓦街で、港の汽笛と三つの言語が混じるパブの上に育った。船体の傷、靴底の粉、機械の摩耗から、事故前の動きを復元する。</p>
+            <dl class="profile-details">
+              <div><dt>辞職</dt><dd>十二年前の第十一整備棟火災。作業員の過失とされた事故で、保守記録の改ざんを公表。十四名の名誉を戻し、局での席を失った。</dd></div>
+              <div><dt>元相棒</dt><dd>音響鑑識官ミラ・シェン。五年前、外環植民船の調査団へ。置いていった携帯プレイヤーには、古いジャズが一曲だけ残っている。</dd></div>
+              <div><dt>弱点</dt><dd>遺族に「どう感じた」と聞けない。代わりに、故人が触れた椅子や窓やカップを長く見る。</dd></div>
+              <div><dt>持ち物</dt><dd>一本の地球産煙草。高価だからではなく、火をつければ思い出が一つ減る気がして吸わない。</dd></div>
+            </dl>
+          </div>
+        </section>
+        <section class="facts-section">
+          <h3>判明したこと</h3>
+          <ul id="fact-list" class="fact-list"></ul>
+        </section>
+        <section class="current-section">
+          <h3>現在地</h3>
+          <p id="notes-location"></p>
+          <p id="notes-hint" class="notes-hint"></p>
+        </section>
+        <section class="notes-progress-section">
+          <h3>街を見た記録</h3>
+          <p class="big-count"><strong id="notes-count">0</strong><span id="notes-total">/ 0</span></p>
+          <p>事件に関係のないものも含む。全部見る必要はない。</p>
+        </section>
+      </div>
+      <div class="notes-footer">
+        <button id="restart-button" class="text-button" type="button">最初から始める</button>
+        <button id="resume-button" class="primary-button small" type="button">捜査に戻る</button>
+      </div>
+    </dialog>
+
+    <dialog id="restart-dialog" class="confirm-dialog">
+      <p class="kicker">CLOSE CURRENT FILE?</p>
+      <h2>最初から始めますか</h2>
+      <p>現在の捜査記録は消去されます。</p>
+      <div>
+        <button id="cancel-restart" class="secondary-button" type="button">戻る</button>
+        <button id="confirm-restart" class="danger-button" type="button">記録を消す</button>
+      </div>
+    </dialog>
+  </body>
+</html>
