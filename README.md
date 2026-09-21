@@ -18,10 +18,6 @@
 - 考える：集めた情報について思考する
 - 移動する：別の場所へ移る
 
-## ブラウザ版
-
-https://van-ray-hundredth-passenger.namakenekoai.chatgpt.site
-
 ## 原作
 
 - 前編：https://tales.note.com/ai_neko_namake/wy2a0licc43vw/episodes/ezl4d2r4gxclo
