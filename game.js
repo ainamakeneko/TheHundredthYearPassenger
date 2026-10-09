@@ -854,6 +854,7 @@ const visualAssets = {
   storyObjectsB: "assets/story-objects-b-v2.webp",
   people: "assets/character-portraits.webp",
   speakerAtlas: "assets/speaker-atlas-v2.webp",
+  vanRay: "assets/van-ray-hat-v1.png",
   reactions: "assets/world-reactions.webp"
 };
 
@@ -1404,6 +1405,13 @@ function continueFromChapterCard() {
 }
 
 function setSprite(element, assetKey, position, size = "200% 200%") {
+  // Both legacy portrait atlases place Van Ray in their top-left cell.
+  // Keep the user's standalone portrait intact, including the hat brim.
+  if ((assetKey === "people" || assetKey === "speakerAtlas") && position[0] === "0%" && position[1] === "0%") {
+    assetKey = "vanRay";
+    position = ["50%", "50%"];
+    size = "contain";
+  }
   element.style.backgroundImage = `url("${visualAssets[assetKey]}")`;
   element.style.backgroundSize = size;
   element.style.backgroundPosition = position.join(" ");
