@@ -130,7 +130,7 @@ const scenes = [
           flag: "saw_families",
           lines: [
             line("ヴァン・レイ", "古い写真を持った人々がいる。乗客の子、孫、曾孫。待っている側の方が、船に乗った者より年老いていた。"),
-            line("老婦人", "私は七十七歳です。祖父は二十六歳で、幼い母を残して船に乗りました。私より五十一歳若い祖父に、何と呼ばせればいいんでしょう。"),
+            line("老婦人", "祖父は、船では生後八か月でした。私より七十七歳若い祖父に、何と呼ばせればいいんでしょう。"),
             line("ヴァン・レイ", "探偵の免許に、その答えは載っていない。")
           ]
         },
@@ -194,7 +194,7 @@ const scenes = [
           id: "descendant",
           label: "乗客の孫娘",
           lines: [
-            line("老婦人", "祖父は二十六歳でした。母が亡くなる前に、祖父が歌った子守歌の録音を預かりました。覚えているか、聞いてみたいんです。"),
+            line("老婦人", "祖父は赤ん坊でした。母が亡くなる前に、子守歌の録音を預かりました。覚えているか、聞いてみたいんです。"),
             line("ヴァン・レイ", "覚えていなかったら。"),
             line("老婦人", "それでも祖父です。たぶん。"),
             line("ヴァン・レイ", "たぶん、という言葉だけが百年を越えていた。")
@@ -384,7 +384,7 @@ const scenes = [
     actions: {
       look: [
         { id: "red_flower", label: "赤い花の写真", flag: "saw_red_flower", lines: [line("ヴァン・レイ", "アルタイル・ブルー。名前は青、写真は赤。突然変異したのは花か、名前か、それとも見る方か。")] },
-        { id: "cat_photo", label: "猫の写真", lines: [line("ヴァン・レイ", "二年前、地球で撮られた猫。リナはその写真を指したが、写っている動物には会ったことがないと言った。猫の方も、百年前の少女を知らないだろう。")] },
+        { id: "cat_photo", label: "猫の写真", lines: [line("ヴァン・レイ", "二年前、地球で撮られた猫。リナは知らないと言った。猫の方も、百年前の少女を知らないだろう。")] },
         { id: "sea_photo", label: "海の写真", lines: [line("ヴァン・レイ", "海。ノクターンにはないものだ。ないものの写真ほど、色が多く見える。")] },
         { id: "ship_photo", label: "宇宙船の写真", lines: [line("ヴァン・レイ", "ありふれた連絡艇。写真になると、どの船も目的地を持っているように見える。現実では、たいてい請求書しか運んでいない。")] },
         { id: "stranger_photo", label: "知らない男の写真", lines: [line("ヴァン・レイ", "誰にも知られていない顔は、証拠として優秀だ。人間としては少し寂しい。")] },
@@ -401,8 +401,8 @@ const scenes = [
             line("セイン", "あなたの母親は死んでいますか？"),
             line("アーロン", "はい。"),
             line("セイン", "この人物はアーロン・ミルズではありません。彼の出港時点では、母親は生きていました。なのに現在の事実を知っている。"),
-            line("ヴァン・レイ", "昨日の受入記録では、家族の現況資料を配った後の返答だ。船内から知っていたとは言えない。"),
-            line("セイン", "ええ。原記録も読みました。今の結論は撤回します。検査でも、回答だけを切り取らないでください。"),
+            line("ヴァン・レイ", "誰かから聞いた可能性は。"),
+            line("セイン", "あります。今のは罠です。探偵はもっと注意深いと思っていました。"),
             line("ヴァン・レイ", "この女が気に入らないという事実だけは、十分に立証された。")
           ],
           repeat: [line("アーロン", "母の焼いたリンゴの味は覚えています。それが誰の記憶かは、答えられません。")] 
@@ -412,7 +412,7 @@ const scenes = [
           label: "リナに写真を見せる",
           lines: [
             line("セイン", "好きなものを選んで。"),
-            line("リナ", "これ。かわいいから。"),
+            line("リナ", "猫。かわいいから。"),
             line("セイン", "この猫を知っている？"),
             line("リナ", "知らない。")
           ]
@@ -428,7 +428,7 @@ const scenes = [
         }
       ],
       think: [
-        { id: "future_info", label: "未来の知識", lines: [line("ヴァン・レイ", "母親の死を知っていても、この猫を知らなくても、それだけでは情報の出所は分からない。伝聞と記憶と推測を分けなければ、未来の知識とは呼べない。")] },
+        { id: "future_info", label: "未来の知識", lines: [line("ヴァン・レイ", "母親の死は知っていて、二年前の猫は知らない。未来を見たわけでも、完全に閉じていたわけでもない。知識には穴がある。")] },
         { id: "colors", label: "色は同じか", lines: [line("ヴァン・レイ", "俺の赤と、他人の赤が同じかは証明できない。普段は困らない。信号で全員が止まれば、それで街は回る。")] },
         { id: "sein_method", label: "セインのやり方", lines: [line("ヴァン・レイ", "彼女は答えより、答えるまでの一秒を見る。嫌なやり方だ。だから役に立つ。")] }
       ],
@@ -463,7 +463,7 @@ const scenes = [
       line("ヴァン・レイ", "航海日誌の日付は途中から飛んでいた。三十七年目、六十年目、八十年目、百年目。筆跡はずっと同じ。"),
       line("セイン", "ここを。"),
       line("航海日誌", "『四十三年前。本日、質問を受けた。我々は人間か、と。回答しなかった。彼らは満足したようだった』"),
-      line("ヴァン・レイ", "船内で音がした。埃の上に、新しい足跡が二つ。片方は靴跡。もう片方は裸足らしいが、指の並びが人間とは違っていた。")
+      line("ヴァン・レイ", "船内で音がした。埃の上に、新しい足跡が二つ。片方は人間。もう片方は――そう呼ぶには、指が一本多かった。")
     ],
     next: "medical",
     nextLabel: "足跡を追う",
@@ -516,19 +516,19 @@ const scenes = [
       line("ヴァン・レイ", "一つは靴。もう一つは裸足。四本の細長い指に、爪はない。"),
       line("セイン", "数時間以内のものです。"),
       line("ヴァン・レイ", "二百八十二人目か。"),
-      line("セイン", "足跡は二種類です。でも、二人増えたとは限りません。私たちや、先に入った職員のものを除く必要があります。"),
-      line("ヴァン・レイ", "まだ人数にはできない、か。"),
-      line("セイン", "まず靴底を照合しましょう。"),
+      line("セイン", "二百八十三人目です。足跡は二種類あります。"),
+      line("ヴァン・レイ", "数えるな。"),
+      line("セイン", "探偵でしょう。"),
       line("ヴァン・レイ", "足跡は医療区画の前で消えていた。")
     ],
     resume: line("ヴァン・レイ", "医療区画は無人だ。足跡だけが、先に着いている。"),
-    required: ["saw_tracks", "record_one", "record_two", "record_three"],
-    hint: "二種類の足跡と、色の違う壁パネルの奥を調べ、三本の記録媒体をすべて確認する。",
+    required: ["saw_tracks", "record_three"],
+    hint: "二種類の足跡と、色の違う壁パネルの奥を調べる。",
     readyLines: [
       line("記録・船長", "『彼らは我々を保存できると言った。生物は形ではない。身体でも、記憶でもない。もっと別のものらしい』"),
       line("ヴァン・レイ", "映像はそこで切れた。"),
-      line("セイン", "二百八十一人という数だけでは、何が保存されたのか分かりません。"),
-      line("ヴァン・レイ", "身体の数と、保存されたものの数は別か。"),
+      line("セイン", "この船には、二百八十一人もいません。"),
+      line("ヴァン・レイ", "じゃあ何人いる。"),
       line("セイン", "分かりません。専門家は、分からないことを分からないと言うためにいるんです。")
     ],
     next: "experiment",
@@ -570,7 +570,7 @@ const scenes = [
     id: "experiment",
     chapter: "第六章　ずれた言葉",
     location: "第三宇宙港・隔離区画",
-    time: "帰還三日目 09:20",
+    time: "翌日 09:20",
     code: "TEST / SEMANTICS",
     word: "BLUE",
     eyebrow: "SUBJECT: LINA FORD",
@@ -586,16 +586,16 @@ const scenes = [
     hint: "箱、図形、動物の三つで、リナの認識を確かめる。",
     readyLines: [
       line("ヴァン・レイ", "青い箱を赤と呼び、円を三角と呼び、犬を猫と呼ぶ。だが選ぶものは一貫していた。"),
-      line("セイン", "呼び名の対応がずれている可能性があります。ただ、名前を聞く検査だけでは、区別する力まで確かめられません。"),
-      line("ヴァン・レイ", "百年前は同じ言葉だった。見え方が違うのか、呼び方が違うのか。"),
-      line("セイン", "言葉を使わずに選んでもらいましょう。そこを分ける必要があります。")
+      line("セイン", "認識ではなく、言葉です。彼女の中で概念に対応する語が、私たちとずれている。"),
+      line("ヴァン・レイ", "百年前は同じ言葉だった。どこでずれた。"),
+      line("セイン", "だから、おかしいんです。")
     ],
     next: "dining",
     nextLabel: "最初から見直す",
     transition: {
       number: "INTERLUDE 06",
       title: "幕間　言葉だけがずれる",
-      place: "隔離区画｜帰還三日目 09:47",
+      place: "隔離区画｜翌日 09:47",
       button: "船を見直す"
     },
     actions: {
@@ -643,8 +643,8 @@ const scenes = [
     hint: "一枚ではなく複数の皿を比べ、客室も見比べる。",
     readyLines: [
       line("ヴァン・レイ", "皿も、カップも、椅子も、同じ場所に同じ傷がある。客室のベッド脚まで同じだった。"),
-      line("セイン", "共通の元を写した可能性があります。船の内装まで。"),
-      line("ヴァン・レイ", "百年分の傷だと思っていたものが、写された傷なら話は変わる。船を作り直した可能性がある。回数も、人に何が起きたかも、まだ別の問いだ。"),
+      line("セイン", "複製品です。船まで。"),
+      line("ヴァン・レイ", "百年間使われた船じゃない。百年前のある瞬間を、何度も作り直した船だ。"),
       line("ヴァン・レイ", "俺たちは船長を呼んだ。")
     ],
     next: "captain",
@@ -660,7 +660,7 @@ const scenes = [
         { id: "one_plate", label: "一枚の皿", lines: [line("ヴァン・レイ", "縁が欠け、中央に三本の傷。百年使った皿に見える。一枚だけなら。")] },
         { id: "plates", label: "十枚の皿", flag: "same_plates", lines: [line("ヴァン・レイ", "十枚並べる。欠けた位置も、三本の傷も同じだ。偶然は、十回続くと製造工程になる。")] },
         { id: "cups", label: "カップ", lines: [line("ヴァン・レイ", "取っ手の付け根に同じ細い亀裂。持ち主の癖ではない。持ち主ごと写された癖だ。")] },
-        { id: "chairs", label: "椅子", lines: [line("ヴァン・レイ", "右の肘掛けだけ擦れている。全員が同じ姿勢で百年座ったのでなければ、共通の損傷を写した可能性がある。")] },
+        { id: "chairs", label: "椅子", lines: [line("ヴァン・レイ", "右の肘掛けだけ擦れている。全員が同じ姿勢で百年座ったのでなければ、答えは一つだ。")] },
         { id: "table", label: "長いテーブル", lines: [line("ヴァン・レイ", "焦げ跡が一定の間隔で繰り返されている。生活の傷を模様にして並べたようだ。")] },
         { id: "rooms", label: "三つの客室", flag: "same_rooms", lines: [line("ヴァン・レイ", "最初の部屋。ベッドの左脚に傷。次の部屋も、その次も同じ。個室という言葉だけが冗談になっていた。")] },
         { id: "door_numbers", label: "客室番号", lines: [line("ヴァン・レイ", "番号だけは違う。違いを理解できない者が、違いの代わりに貼った札かもしれない。")] },
@@ -668,12 +668,12 @@ const scenes = [
         { id: "salt", label: "塩入れ", lines: [line("ヴァン・レイ", "底に塩が固まっている。味を変えるための道具まで同じ量。完璧な再現は、食卓を少し不味くする。")] }
       ],
       talk: [
-        { id: "sein_copies", label: "複製について", condition: "same_plates", lines: [line("ヴァン・レイ", "同じ型の量産品じゃないのか。"), line("セイン", "同じ型だけでは、後からついた細い傷まで揃いません。ただし、まとめて加工した可能性は別に調べる必要があります。"), line("ヴァン・レイ", "傷だけで回数や時期までは決められないな。") ] },
+        { id: "sein_copies", label: "複製について", condition: "same_plates", lines: [line("ヴァン・レイ", "同じ型の量産品じゃないのか。"), line("セイン", "使用後の損傷まで同じ型にする工場があるなら。"), line("ヴァン・レイ", "ないな。商売にならない。") ] },
         { id: "steward", label: "給仕係", lines: [line("給仕係", "毎日、食堂を片づけていました。"), line("ヴァン・レイ", "何を食べた。"), line("給仕係", "覚えています。でも、ここで食べたのかは分かりません。") ] }
       ],
       think: [
         { id: "wrong_question", label: "問いが逆だった", lines: [line("ヴァン・レイ", "人間のどこが違うかを探していた。船の中で異常だったのは、違いがなさすぎることだ。")] },
-        { id: "reconstruction", label: "再構成", lines: [line("ヴァン・レイ", "保存という言葉には、作り直すことも含まれるのか。傷の一致は手掛かりになるが、それだけで何度繰り返したかは分からない。船長の説明と突き合わせる必要がある。")] },
+        { id: "reconstruction", label: "再構成", lines: [line("ヴァン・レイ", "壊れては作り、違うと言われてまた作る。百年は保存の時間ではない。失敗の回数だった。")] },
         { id: "ship_identity", label: "船も同じ船か", lines: [line("ヴァン・レイ", "板を替え、機関を替え、最後に全部を替えた船は、同じ船か。哲学者なら本を書く。修理屋なら請求書を書く。")] }
       ],
       move: [
@@ -774,7 +774,7 @@ const scenes = [
     hint: "セインに『意味』について聞き、机の煙草を見る。",
     readyLines: [
       line("セイン", "身体も記憶も構造として保存できた。でも、意味は一人の脳の中だけにはありません。家族、街、文化、他人との関係、歴史。その間に生まれる。"),
-      line("セイン", "彼らは二百八十一人をコピーした。でも、人間社会のすべてはコピーできなかった。閉じた船で再構成を繰り返すうちに、言葉と意味がずれていった可能性があります。どの段階で変わったかは、記録だけでは追えません。"),
+      line("セイン", "彼らは二百八十一人をコピーした。でも、人間社会のすべてはコピーできなかった。閉じた船で百年、再構成を繰り返すうちに、言葉と意味がずれていった。"),
       line("ヴァン・レイ", "じゃあ、あいつらは人間なのか。"),
       line("セイン", "科学は観察したものを分類できます。どの分類を大切にするべきかまでは、決めてくれません。"),
       line("ヴァン・レイ", "役に立たないな。"),
@@ -797,12 +797,12 @@ const scenes = [
         { id: "coffee", label: "コーヒー", lines: [line("ヴァン・レイ", "俺が淹れ、セインが飲んだ。冷めている。事件の結末にちょうどいい温度だ。")] },
         { id: "window", label: "窓", lines: [line("ヴァン・レイ", "雨のない街が濡れている。窓に映る俺と、ガラスの向こうの俺。どちらも本人だと言い張る顔をしていた。")] },
         { id: "clock", label: "時計", lines: [line("ヴァン・レイ", "二十二時十八分。百年の事件にも、報告書の締切は来る。時間は哲学より事務に厳しい。")] },
-        { id: "empty_chair", label: "空いた椅子", lines: [line("ヴァン・レイ", "セインが陣取った椅子。机までの距離が、俺が使うときより少し近い。")] },
+        { id: "empty_chair", label: "空いた椅子", lines: [line("ヴァン・レイ", "セインが座っていた椅子。いなくなると、愛想のなさだけが残った。")] },
         { id: "coat_rack", label: "コート掛け", lines: [line("ヴァン・レイ", "俺のコートが一着。客の分はない。商売の方針というより、実績の問題だ。")] },
         { id: "desk_scar", label: "机の傷", lines: [line("ヴァン・レイ", "昔、灰皿を落とした跡だ。複製するなら残すべきか。俺なら残す。傷がないと、自分の机だと分からない。")] },
         { id: "ashtray", label: "灰皿", lines: [line("ヴァン・レイ", "煙草に火をつけない男の灰皿。使わない物を置いておくのも、人間を人間らしくする無駄の一つだ。")] },
         { id: "city_lights", label: "街の灯り", lines: [line("ヴァン・レイ", "一つずつの窓に、別々の暮らしがある。遠くから見れば、ただの光の群れだ。近づく理由がなければ、人間も同じだ。")] },
-        { id: "door", label: "閉じた扉", lines: [line("ヴァン・レイ", "事務所の扉。薄い板だが、廊下の足音は意外によく遮る。")] }
+        { id: "door", label: "閉じた扉", lines: [line("ヴァン・レイ", "セインが出ていった扉。閉じた扉は、開いていたときより会話をよく覚えている。")] }
       ],
       talk: [
         {
@@ -834,27 +834,25 @@ const scenes = [
   }
 ];
 
-const expansion = extendCase(scenes, line);
-
 const sceneById = Object.fromEntries(scenes.map((scene) => [scene.id, scene]));
 const verbLabels = { look: "見る", talk: "話す", think: "考える", move: "移動する" };
-const saveKey = "van-ray-case-038-expanded-v2";
+const saveKey = "van-ray-case-038-full-v1";
 const playableSceneIds = new Set(scenes.map((scene) => scene.id));
 
 const visualAssets = {
-  dock: "assets/elpis-dock.webp",
-  ship: "assets/elpis-interior-v1.webp",
-  lab: "assets/cognitive-lab-v1.webp",
-  medical: "assets/elpis-medical-v2.webp",
-  dining: "assets/elpis-dining-v2.webp",
-  captain: "assets/elpis-captain-v2.webp",
-  office: "assets/van-ray-office-v1.webp",
-  objects: "assets/dock-inspections.webp",
-  storyObjectsA: "assets/story-objects-a-v2.webp",
-  storyObjectsB: "assets/story-objects-b-v2.webp",
-  people: "assets/character-portraits.webp",
-  speakerAtlas: "assets/speaker-atlas-v2.webp",
-  reactions: "assets/world-reactions.webp"
+  dock: "../assets/elpis-dock.webp",
+  ship: "../assets/elpis-interior-v1.webp",
+  lab: "../assets/cognitive-lab-v1.webp",
+  medical: "../assets/elpis-medical-v2.webp",
+  dining: "../assets/elpis-dining-v2.webp",
+  captain: "../assets/elpis-captain-v2.webp",
+  office: "../assets/van-ray-office-v1.webp",
+  objects: "../assets/dock-inspections.webp",
+  storyObjectsA: "../assets/story-objects-a-v2.webp",
+  storyObjectsB: "../assets/story-objects-b-v2.webp",
+  people: "../assets/character-portraits.webp",
+  speakerAtlas: "../assets/speaker-atlas-v2.webp",
+  reactions: "../assets/world-reactions.webp"
 };
 
 const prologueSlides = [
@@ -908,8 +906,6 @@ const sceneBackgrounds = {
   captain: "captain",
   office: "office"
 };
-
-Object.assign(sceneBackgrounds, expansion.backgrounds || {});
 
 const objectSprites = {
   elpis: ["0%", "0%"],
@@ -998,23 +994,16 @@ const facts = [
   { flag: "saw_legal_terminal", text: "戸籍・相続・婚姻・保険だけで四万件超の手続きが発生したが、帰還者を本人と認める法律がない。" },
   { flag: "aaron_answer", text: "乗客は記憶と身元情報を持つが、「本人か」という問いには答えない。" },
   { flag: "asked_human", text: "二百八十一名全員が、「人間か」という問いにも答えなかった。" },
-  { flag: "saw_red_flower", text: "写真は二年前の突然変異で赤くなったアルタイル・ブルー。名称と写っている色が一致しない。" },
-  { flag: "read_log", text: "日付の途切れた紙の航海日誌が残されていた。筆跡は変わっていない。" },
-  { flag: "record_three", text: "航行不能時、未知の存在が乗客を「保存」すると申し出た、という記録が残っていた。" },
-  { flag: "record_two", text: "記録の船長は、救助を申し出た存在には個体の概念がないと述べていた。" },
-  { flag: "tested_dog", text: "リナは犬の写真を「猫」と呼んだ。知覚の問題か語の使い方の問題かは、呼び名だけでは決まらない。" },
-  { flag: "same_rooms", text: "複数の客室で、ベッド脚の傷が同じ形に反復している。これだけでは再構成の回数や乗客の来歴は決まらない。" },
-  { flag: "captain_truth", text: "船長は、船も自分も繰り返し作り直されたと証言した。回数は本人にも分からない。" },
-  { flag: "meaning_answer", text: "セインは、再現しきれなかったものを「意味」と説明した。煙草も、形や成分だけでなく人がそれと過ごした時間を持つ。" }
+  { flag: "saw_red_flower", text: "リナは二年前に生まれた赤い花を見て、「青い」と答えた。" },
+  { flag: "read_log", text: "四十三年前、乗客たちは未知の存在から「人間か」と尋ねられていた。" },
+  { flag: "record_three", text: "航行不能時、未知の存在が乗客を「保存」すると申し出た。彼らには個体の概念がない。" },
+  { flag: "tested_dog", text: "乗客の認識ではなく、概念に結びつく言葉そのものがずれている。" },
+  { flag: "same_rooms", text: "船内の傷や摩耗は同じ形で反復している。船も乗客も、何度も再構成された。" },
+  { flag: "captain_truth", text: "未知の存在は人間を理解しようと、身体・脳・記憶・環境を何度も再現した。" },
+  { flag: "meaning_answer", text: "意味は一人の脳内ではなく、家族・街・文化・歴史との関係に宿る。船内だけでは完全に複製できなかった。" }
 ];
 
-facts.push(...(expansion.facts || []));
-
 const dom = {
-  deduction: document.querySelector("#deduction-dialog"),
-  deductionTitle: document.querySelector("#deduction-title"),
-  deductionChoices: document.querySelector("#deduction-choices"),
-  history: document.querySelector("#dialogue-history"),
   title: document.querySelector("#title-screen"),
   game: document.querySelector("#game-screen"),
   start: document.querySelector("#start-button"),
@@ -1109,13 +1098,10 @@ let pendingIntertitle = null;
 let cityPulseIndex = 0;
 let prologueActive = false;
 let prologueIndex = 0;
-let pendingDeduction = null;
 
 function freshState() {
   return {
     currentScene: "dock",
-    pendingSceneResolution: null,
-    history: [],
     seen: [],
     flags: [],
     readyScenes: [],
@@ -1143,12 +1129,9 @@ function isSceneReady(scene) {
 }
 
 function getLookTotal() {
-  // Mutually exclusive report receipts occupy one achievable observation slot.
-  const slots = new Set();
-  scenes.filter(scene => playableSceneIds.has(scene.id)).forEach(scene => {
-    scene.actions.look.forEach(target => slots.add(target.exclusiveGroup || `${scene.id}:${target.id}`));
-  });
-  return slots.size;
+  return scenes
+    .filter((scene) => playableSceneIds.has(scene.id))
+    .reduce((sum, scene) => sum + scene.actions.look.length, 0);
 }
 
 function getLookCount() {
@@ -1161,8 +1144,6 @@ function sanitizeLoadedState(value) {
   const currentScene = sceneById[value.currentScene] ? value.currentScene : "dock";
   return {
     currentScene,
-    pendingSceneResolution: value.pendingSceneResolution === currentScene ? currentScene : null,
-    history: Array.isArray(value.history) ? value.history.filter(item => item && typeof item.speaker === "string" && typeof item.text === "string").slice(-250) : [],
     seen: Array.isArray(value.seen) ? value.seen.filter((item) => typeof item === "string") : [],
     flags: Array.isArray(value.flags) ? value.flags.filter((item) => typeof item === "string") : [],
     readyScenes: Array.isArray(value.readyScenes) ? value.readyScenes.filter((item) => sceneById[item]) : [],
@@ -1199,8 +1180,6 @@ function saveState() {
 function beginGame(useSaved = false) {
   const loaded = useSaved ? loadSavedState() : null;
   state = loaded || freshState();
-  pendingDeduction = null;
-  dom.deduction.close();
   clearTyping();
   dialogueQueue = [];
   dialogueBusy = false;
@@ -1312,7 +1291,7 @@ function loadScene(sceneId, options = {}) {
       button: "この章を始める"
     }, scene.intro);
   } else {
-    startDialogue(state.pendingSceneResolution === scene.id ? scene.readyLines : [scene.resume]);
+    startDialogue([scene.resume]);
   }
 }
 
@@ -1545,19 +1524,17 @@ function renderTargets() {
 }
 
 function selectTarget(target, verb) {
-  if (dialogueBusy || prologueActive || dom.deduction.open) return;
+  if (dialogueBusy || prologueActive) return;
   const scene = sceneById[state.currentScene];
   showInspection(target, verb);
   const key = seenKey(scene.id, verb, target.id);
   const wasSeen = state.seen.includes(key);
   if (!wasSeen) {
     state.seen.push(key);
-    if (!target.choices) addFlag(target.flag);
+    addFlag(target.flag);
   }
 
-  pendingDeduction = target.choices && !hasFlag(target.flag) ? target : null;
-  const canRepeat = wasSeen && (!target.choices || hasFlag(target.flag));
-  let entries = canRepeat && target.repeat ? target.repeat : target.lines;
+  let entries = target.lines;
   if (!entries || !entries.length) {
     if (verb === "talk") entries = [line(target.label, "もう話すことはなさそうだ。沈黙にも二度目がある。")];
     else if (verb === "move") entries = [line("ヴァン・レイ", "同じ場所をもう一度歩く。景色は変わらない。見ているものが変わるだけだ。")];
@@ -1566,7 +1543,6 @@ function selectTarget(target, verb) {
 
   if (!state.readyScenes.includes(scene.id) && isSceneReady(scene)) {
     state.readyScenes.push(scene.id);
-    state.pendingSceneResolution = scene.id;
     pendingIntertitle = {
       card: scene.transition,
       entries: scene.readyLines
@@ -1600,14 +1576,6 @@ function showNextDialogue() {
       return;
     }
     dialogueBusy = false;
-    if (state.pendingSceneResolution === state.currentScene) {
-      state.pendingSceneResolution = null;
-      saveState();
-    }
-    if (pendingDeduction) {
-      openDeduction(pendingDeduction);
-      return;
-    }
     dom.dialoguePanel.classList.remove("is-typing");
     hideSpeakerStage();
     renderTargets();
@@ -1615,9 +1583,6 @@ function showNextDialogue() {
   }
 
   const entry = dialogueQueue.shift();
-  state.history.push({ speaker: entry.speaker || "ヴァン・レイ", text: entry.text || "" });
-  state.history = state.history.slice(-250);
-  saveState();
   dom.speaker.textContent = entry.speaker || "ヴァン・レイ";
   updateSpeakerPortrait(entry.speaker || "ヴァン・レイ");
   fullDialogueText = entry.text || "";
@@ -1636,45 +1601,6 @@ function showNextDialogue() {
     dom.dialogueText.textContent = fullDialogueText.slice(0, typingIndex);
     if (typingIndex >= fullDialogueText.length) finishTyping();
   }, 19);
-}
-
-function openDeduction(target) {
-  dom.deductionTitle.textContent = target.label;
-  dom.deductionChoices.replaceChildren();
-  target.choices.forEach(choice => {
-    const button = document.createElement("button");
-    button.className = "target-button";
-    button.type = "button";
-    button.textContent = choice.label;
-    button.addEventListener("click", () => resolveDeduction(choice.id));
-    dom.deductionChoices.append(button);
-  });
-  if (!dom.deduction.open) dom.deduction.showModal();
-}
-
-function resolveDeduction(choiceId) {
-  const target = pendingDeduction;
-  if (!target || !dom.deduction.open) return;
-  const choice = target.choices.find(item => item.id === choiceId);
-  if (!choice) return;
-  const sufficient = (choice.requires || []).every(hasFlag);
-  dom.deduction.close();
-  pendingDeduction = null;
-  let entries = choice.lines || [];
-  if (!sufficient) {
-    entries = [line("ヴァン・レイ", "筋は考えられる。だが、まだ確かめていないことがある。捜査メモと現場の記録を確認しよう。")];
-  } else if (choice.correct) {
-    addFlag(choice.flag);
-    addFlag(target.flag);
-    const scene = sceneById[state.currentScene];
-    if (!state.readyScenes.includes(scene.id) && isSceneReady(scene)) {
-      state.readyScenes.push(scene.id);
-      state.pendingSceneResolution = scene.id;
-      pendingIntertitle = { card: scene.transition, entries: scene.readyLines };
-    }
-  }
-  saveState();
-  startDialogue(entries.length ? entries : [line("ヴァン・レイ", "メモに残しておこう。")]);
 }
 
 function clearTyping() {
@@ -1708,12 +1634,6 @@ function updateCounts() {
 
 function renderNotes() {
   const scene = sceneById[state.currentScene];
-  dom.history.replaceChildren();
-  state.history.forEach(entry => {
-    const item = document.createElement("p");
-    item.textContent = `${entry.speaker}：${entry.text}`;
-    dom.history.append(item);
-  });
   dom.factList.replaceChildren();
   const unlocked = facts.filter((fact) => hasFlag(fact.flag));
   if (!unlocked.length) {
@@ -1727,8 +1647,8 @@ function renderNotes() {
       dom.factList.append(item);
     });
   }
-  dom.notesLocation.textContent = state.finished ? "事件簿 038・完了" : `${scene.location}（捜査 ${scenes.indexOf(scene) + 1} / ${scenes.length}）`;
-  dom.notesHint.textContent = state.finished ? "事件は閉じた。街はまだ続いている。" : (isSceneReady(scene) ? `「移動する」から${scene.nextLabel}。` : `${scene.hint}（確認 ${scene.required.filter(hasFlag).length} / ${scene.required.length}）`);
+  dom.notesLocation.textContent = state.finished ? "事件簿 038・完了" : scene.location;
+  dom.notesHint.textContent = state.finished ? "事件は閉じた。街はまだ続いている。" : (isSceneReady(scene) ? `「移動する」から${scene.nextLabel}。` : scene.hint);
   updateCounts();
 }
 
@@ -1759,8 +1679,7 @@ function showEnding() {
   dom.endingCount.textContent = String(count);
   dom.endingTotal.textContent = `/ ${total}`;
   dom.endingQuote.textContent = "人間かどうかは分からない。だが、人間とは何かを百年間悩み続けた。";
-  const reportNote = Object.entries(expansion.endingNotes || {}).find(([flag]) => hasFlag(flag));
-  dom.endingNote.textContent = note + (reportNote ? "\n\n" + reportNote[1] : "");
+  dom.endingNote.textContent = note;
   window.setTimeout(() => dom.returnOffice.focus?.(), 0);
 }
 
@@ -1894,7 +1813,6 @@ function getCaseSnapshot() {
     location: scene.location,
     activeVerb,
     dialogueBusy,
-    deduction: dom.deduction.open && pendingDeduction ? { id: pendingDeduction.id, label: pendingDeduction.label, choices: pendingDeduction.choices.map(({id, label}) => ({id, label})) } : null,
     currentDialogue: dom.dialogueText.textContent,
     targets,
     observations: getLookCount(),
@@ -1964,7 +1882,6 @@ function registerWebMCPTools() {
       if (!dom.title.hidden || state.finished) throw new Error("The case is not on an active scene");
       if (prologueActive) throw new Error("Advance the prologue before choosing an investigation action");
       if (dialogueBusy) throw new Error("Advance the current dialogue before choosing another action");
-      if (dom.deduction.open) throw new Error("Resolve or defer the current hypothesis first");
       const scene = sceneById[state.currentScene];
       setActiveVerb(input.verb);
       if (input.verb === "move" && input.targetId === "next") {
@@ -1977,20 +1894,6 @@ function registerWebMCPTools() {
       const target = (scene.actions[input.verb] || []).find((item) => item.id === input.targetId && targetIsAvailable(item));
       if (!target) throw new Error("Target is not available in the current scene");
       selectTarget(target, input.verb);
-      return getCaseSnapshot();
-    }
-  });
-
-  register({
-    name: "choose_case_hypothesis",
-    title: "根拠に合う判断を選ぶ",
-    description: "表示中の照合画面から選択します。choiceId は read_case_state の deduction.choices で確認します。",
-    inputSchema: { type: "object", properties: { choiceId: { type: "string" } }, required: ["choiceId"], additionalProperties: false },
-    annotations: { readOnlyHint: false, untrustedContentHint: false },
-    execute(input) {
-      if (!dom.deduction.open || !pendingDeduction) throw new Error("No hypothesis is waiting");
-      if (!pendingDeduction.choices.some(choice => choice.id === input?.choiceId)) throw new Error("Unknown hypothesis");
-      resolveDeduction(input.choiceId);
       return getCaseSnapshot();
     }
   });
@@ -2010,13 +1913,6 @@ function registerWebMCPTools() {
     }
   });
 }
-
-dom.deduction.addEventListener("cancel", () => { pendingDeduction = null; renderTargets(); });
-document.querySelector("#deduction-back").addEventListener("click", () => {
-  pendingDeduction = null;
-  dom.deduction.close();
-  renderTargets();
-});
 
 dom.start.addEventListener("click", () => {
   if (loadSavedState()) dom.restartDialog.showModal();
@@ -2060,13 +1956,12 @@ dom.returnOffice.addEventListener("click", returnToOffice);
 dom.closeCase.addEventListener("click", returnToTitle);
 
 document.addEventListener("keydown", (event) => {
-  if (dom.game.hidden || dom.notes.open || dom.restartDialog.open || dom.deduction.open) return;
+  if (dom.game.hidden || dom.notes.open || dom.restartDialog.open) return;
   if (event.key === "Escape" && !dom.commandPanel.hidden) {
     event.preventDefault();
     closeCommandPanel();
     return;
   }
-  if ((event.key === " " || event.key === "Enter") && event.target.closest?.("button, a, input, select, textarea, summary")) return;
   if (event.key === " " || event.key === "Enter") {
     event.preventDefault();
     if (prologueActive) advancePrologue();

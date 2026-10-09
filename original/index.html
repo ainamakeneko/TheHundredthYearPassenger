@@ -14,15 +14,14 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23090d10'/%3E%3Cpath d='M14 13h9l9 30 9-30h9L36 53h-8z' fill='%23c6a15b'/%3E%3C/svg%3E"
     />
     <title>私立探偵ヴァン・レイ ― 百年目の乗客</title>
-    <link rel="stylesheet" href="styles.css?v=9" />
-    <script src="extension-data.js?v=1" defer></script>
-    <script src="game.js?v=9" defer></script>
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <script src="game.js?v=8" defer></script>
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
     <audio id="jazz-player" preload="auto" loop playsinline>
-      <source src="assets/nocturne-jazz-loop.ogg" type="audio/ogg; codecs=opus" />
-      <source src="assets/nocturne-jazz-loop.mp3" type="audio/mpeg" />
+      <source src="../assets/nocturne-jazz-loop.ogg" type="audio/ogg; codecs=opus" />
+      <source src="../assets/nocturne-jazz-loop.mp3" type="audio/mpeg" />
     </audio>
 
     <main id="app">
@@ -34,7 +33,7 @@
         </div>
 
         <div class="title-content">
-          <p class="kicker">VAN RAY · CASE FILE 038 · 拡張捜査版</p>
+          <p class="kicker">VAN RAY · CASE FILE 038</p>
           <h1 id="game-title">
             <span>百年目の</span>
             <span>乗客</span>
@@ -45,7 +44,6 @@
             百年前に死んだ船が帰ってきた。<br />乗客二百八十一名、全員生存。
           </p>
 
-          <p class="edition-link"><a href="original/index.html">元の9章版を遊ぶ（記録は別保存）</a></p>
           <div class="title-actions">
             <button id="start-button" class="primary-button" type="button">
               <span class="button-index">01</span>
@@ -292,7 +290,6 @@
           <p id="notes-location"></p>
           <p id="notes-hint" class="notes-hint"></p>
         </section>
-        <details class="history-section"><summary>会話の記録（直近250件）</summary><div id="dialogue-history"></div></details>
         <section class="notes-progress-section">
           <h3>街を見た記録</h3>
           <p class="big-count"><strong id="notes-count">0</strong><span id="notes-total">/ 0</span></p>
@@ -305,13 +302,6 @@
       </div>
     </dialog>
 
-    <dialog id="deduction-dialog" class="notes-dialog deduction-dialog" aria-labelledby="deduction-title">
-      <p class="kicker">EVIDENCE / HYPOTHESIS</p>
-      <h2 id="deduction-title">証拠を照合する</h2>
-      <p>観察と証言から、言えることを選ぶ。考え直しても捜査は続けられる。</p>
-      <div id="deduction-choices"></div>
-      <button id="deduction-back" class="secondary-button" type="button">判断を保留して調べ直す</button>
-    </dialog>
     <dialog id="restart-dialog" class="confirm-dialog">
       <p class="kicker">CLOSE CURRENT FILE?</p>
       <h2>最初から始めますか</h2>

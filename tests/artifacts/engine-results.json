@@ -1,0 +1,363 @@
+{
+  "mode": "Unmodified engine in Node VM with DOM stubs; no rendering",
+  "tests": [
+    {
+      "name": "all expanded scenes and actions reach ending through real engine callbacks",
+      "pass": true,
+      "detail": {
+        "traversed": [
+          "dock",
+          "quarantine",
+          "archive",
+          "testroom",
+          "elpis",
+          "medical",
+          "service",
+          "experiment",
+          "comparison",
+          "dining",
+          "captain",
+          "review",
+          "office"
+        ],
+        "actions": 206,
+        "decisions": 5,
+        "wrongAnswers": 0,
+        "missingEvidence": 0,
+        "deferrals": 0
+      }
+    },
+    {
+      "name": "both report branches expose their receipt and distinct ending response",
+      "pass": true,
+      "detail": {
+        "uniqueActionsAcrossBranches": 207,
+        "outcomes": [
+          {
+            "choice": "prioritize_care",
+            "actions": 206,
+            "observations": 103,
+            "displayedTotal": 103,
+            "ending": "事件には関係のないものを、ずいぶん見た。たぶん、そういうものの間にこそ、この街はあった。\n\n報告を受けた港は、希望者の相談時間を二枠、仮に確保した。参加するかはこれから本人に確かめる。船の検証依頼も残っている。"
+          },
+          {
+            "choice": "prioritize_verification",
+            "actions": 206,
+            "observations": 103,
+            "displayedTotal": 103,
+            "ending": "事件には関係のないものを、ずいぶん見た。たぶん、そういうものの間にこそ、この街はあった。\n\n報告を受けた港は、共同検証の原記録を置く場所を確保した。船への立ち入り条件は翌朝確認する。帰還者の相談窓口も、次の準備として依頼に残っている。"
+          }
+        ]
+      }
+    },
+    {
+      "name": "minimal prerequisite-only route reaches ending without missable earlier evidence",
+      "pass": true,
+      "detail": {
+        "traversed": [
+          "dock",
+          "quarantine",
+          "archive",
+          "testroom",
+          "elpis",
+          "medical",
+          "service",
+          "experiment",
+          "comparison",
+          "dining",
+          "captain",
+          "review",
+          "office"
+        ],
+        "actionsTaken": 44,
+        "optionalActionsSkipped": 163
+      }
+    },
+    {
+      "name": "all reachable wrong choices, missing evidence, deferral and retry",
+      "pass": true,
+      "detail": {
+        "traversed": [
+          "dock",
+          "quarantine",
+          "archive",
+          "testroom",
+          "elpis",
+          "medical",
+          "service",
+          "experiment",
+          "comparison",
+          "dining",
+          "captain",
+          "review",
+          "office"
+        ],
+        "actions": 206,
+        "decisions": 5,
+        "wrongAnswers": 8,
+        "missingEvidence": 4,
+        "deferrals": 5
+      }
+    },
+    {
+      "name": "save resumes mid-dialogue, pending decision and unread resolution",
+      "pass": true,
+      "detail": {
+        "scene": "archive",
+        "revelationLinesReplayed": 4,
+        "midDialogueAndDecisionProgressRetained": true
+      }
+    },
+    {
+      "name": "keydown modal guards and button-native-key bypass in engine handler",
+      "pass": true,
+      "detail": {
+        "handlerGuardsVerified": true,
+        "nativeBrowserActivationNotVerified": true
+      }
+    },
+    {
+      "name": "WebMCP exposes hypotheses and blocks action leakage through deduction",
+      "pass": true,
+      "detail": {
+        "registeredTools": [
+          "read_case_state",
+          "start_case",
+          "choose_case_action",
+          "choose_case_hypothesis",
+          "advance_case_dialogue"
+        ],
+        "unknownChoiceRejected": true,
+        "modalActionLeakBlocked": true
+      }
+    },
+    {
+      "name": "original edition reaches ending with independent save key",
+      "pass": true,
+      "detail": {
+        "traversed": [
+          "dock",
+          "quarantine",
+          "testroom",
+          "elpis",
+          "medical",
+          "experiment",
+          "dining",
+          "captain",
+          "office"
+        ],
+        "actions": 156,
+        "decisions": 0,
+        "wrongAnswers": 0,
+        "missingEvidence": 0,
+        "deferrals": 0,
+        "separateSaveKeys": [
+          "van-ray-case-038-expanded-v2",
+          "van-ray-case-038-full-v1"
+        ]
+      }
+    },
+    {
+      "name": "original edition preserved byte-for-byte apart from relative asset paths",
+      "pass": true,
+      "detail": {
+        "commit": "88232aa3535d8c50f156b2f76df019bceda27ff7",
+        "files": [
+          "index.html",
+          "game.js",
+          "styles.css"
+        ],
+        "onlyChange": "Relative assets/ paths adjusted to ../assets/"
+      }
+    },
+    {
+      "name": "all chapter links, action IDs, flags and choice evidence resolve",
+      "pass": true,
+      "detail": {
+        "scenes": 13,
+        "producedFlags": 57,
+        "prerequisites": 96
+      }
+    }
+  ],
+  "browser": {
+    "verified": false,
+    "launch": "playwright.chromium.launch({ executablePath: '/usr/bin/chromium', headless: true, args: ['--no-sandbox'] })",
+    "blocker": "Chromium aborted before page creation: process_singleton_posix.cc socket() failed: Operation not permitted (SIGABRT). No browser screenshot or layout result exists."
+  },
+  "statistics": {
+    "baseline": {
+      "scenes": 9,
+      "actions": 156,
+      "observations": 82,
+      "decisions": 0,
+      "dialogueLines": 344,
+      "details": [
+        {
+          "id": "dock",
+          "actions": 25,
+          "observations": 13,
+          "decisions": 0,
+          "dialogueLines": 71
+        },
+        {
+          "id": "quarantine",
+          "actions": 17,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 37
+        },
+        {
+          "id": "testroom",
+          "actions": 16,
+          "observations": 8,
+          "decisions": 0,
+          "dialogueLines": 35
+        },
+        {
+          "id": "elpis",
+          "actions": 18,
+          "observations": 10,
+          "decisions": 0,
+          "dialogueLines": 33
+        },
+        {
+          "id": "medical",
+          "actions": 16,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 35
+        },
+        {
+          "id": "experiment",
+          "actions": 14,
+          "observations": 7,
+          "decisions": 0,
+          "dialogueLines": 32
+        },
+        {
+          "id": "dining",
+          "actions": 16,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 28
+        },
+        {
+          "id": "captain",
+          "actions": 15,
+          "observations": 7,
+          "decisions": 0,
+          "dialogueLines": 34
+        },
+        {
+          "id": "office",
+          "actions": 19,
+          "observations": 10,
+          "decisions": 0,
+          "dialogueLines": 39
+        }
+      ]
+    },
+    "expanded": {
+      "scenes": 13,
+      "actions": 207,
+      "observations": 104,
+      "decisions": 5,
+      "dialogueLines": 569,
+      "details": [
+        {
+          "id": "dock",
+          "actions": 25,
+          "observations": 13,
+          "decisions": 0,
+          "dialogueLines": 71
+        },
+        {
+          "id": "quarantine",
+          "actions": 17,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 37
+        },
+        {
+          "id": "archive",
+          "actions": 12,
+          "observations": 5,
+          "decisions": 1,
+          "dialogueLines": 53
+        },
+        {
+          "id": "testroom",
+          "actions": 16,
+          "observations": 8,
+          "decisions": 0,
+          "dialogueLines": 35
+        },
+        {
+          "id": "elpis",
+          "actions": 18,
+          "observations": 10,
+          "decisions": 0,
+          "dialogueLines": 33
+        },
+        {
+          "id": "medical",
+          "actions": 16,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 35
+        },
+        {
+          "id": "service",
+          "actions": 11,
+          "observations": 5,
+          "decisions": 1,
+          "dialogueLines": 47
+        },
+        {
+          "id": "experiment",
+          "actions": 14,
+          "observations": 7,
+          "decisions": 0,
+          "dialogueLines": 32
+        },
+        {
+          "id": "comparison",
+          "actions": 12,
+          "observations": 5,
+          "decisions": 1,
+          "dialogueLines": 56
+        },
+        {
+          "id": "dining",
+          "actions": 16,
+          "observations": 9,
+          "decisions": 0,
+          "dialogueLines": 28
+        },
+        {
+          "id": "captain",
+          "actions": 15,
+          "observations": 7,
+          "decisions": 0,
+          "dialogueLines": 34
+        },
+        {
+          "id": "review",
+          "actions": 12,
+          "observations": 5,
+          "decisions": 1,
+          "dialogueLines": 52
+        },
+        {
+          "id": "office",
+          "actions": 23,
+          "observations": 12,
+          "decisions": 1,
+          "dialogueLines": 56
+        }
+      ]
+    }
+  },
+  "finishedAt": "2026-10-09T13:25:07.613Z"
+}

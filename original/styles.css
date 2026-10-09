@@ -74,7 +74,7 @@ button:focus-visible {
   background:
     linear-gradient(90deg, rgba(5, 9, 11, 0.98) 0%, rgba(5, 9, 11, 0.78) 48%, rgba(5, 9, 11, 0.38) 100%),
     linear-gradient(180deg, rgba(5, 9, 11, 0.1), rgba(5, 9, 11, 0.46)),
-    url("assets/elpis-dock.webp") center 44% / cover no-repeat,
+    url("../assets/elpis-dock.webp") center 44% / cover no-repeat,
     radial-gradient(circle at 77% 24%, rgba(63, 119, 122, 0.22), transparent 24%),
     linear-gradient(145deg, #0e171b, #070a0c 64%);
 }
@@ -443,7 +443,7 @@ button:focus-visible {
 }
 
 .scene-backdrop {
-  --scene-image: url("assets/elpis-dock.webp");
+  --scene-image: url("../assets/elpis-dock.webp");
   overflow: hidden;
   background-color: #090e11;
   background-image:
@@ -985,7 +985,7 @@ button:focus-visible {
   border: 1px solid rgba(199, 161, 91, 0.35);
   background:
     linear-gradient(145deg, rgba(63, 119, 122, 0.25), rgba(7, 10, 12, 0.88)),
-    url("assets/character-portraits.webp") left top / 200% 200% no-repeat;
+    url("../assets/character-portraits.webp") left top / 200% 200% no-repeat;
   filter: saturate(0.82);
 }
 
@@ -1138,7 +1138,7 @@ button:focus-visible {
   border: 1px solid rgba(199, 161, 91, 0.38);
   background:
     linear-gradient(145deg, rgba(63, 119, 122, 0.2), rgba(7, 10, 12, 0.82)),
-    url("assets/character-portraits.webp") left top / 200% 200% no-repeat;
+    url("../assets/character-portraits.webp") left top / 200% 200% no-repeat;
 }
 
 .detective-profile h4 {
@@ -1301,7 +1301,7 @@ button:focus-visible {
   padding: clamp(1.2rem, 5vw, 4rem);
   background:
     linear-gradient(90deg, rgba(5, 8, 10, 0.97), rgba(5, 8, 10, 0.68)),
-    url("assets/elpis-dock.webp") center / cover no-repeat;
+    url("../assets/elpis-dock.webp") center / cover no-repeat;
 }
 
 .ending-card {
@@ -2527,7 +2527,7 @@ button:focus-visible {
     padding: 2rem;
     background:
       linear-gradient(rgba(5, 8, 10, 0.84), rgba(5, 8, 10, 0.94)),
-      url("assets/elpis-dock.webp") 38% center / cover no-repeat;
+      url("../assets/elpis-dock.webp") 38% center / cover no-repeat;
     text-align: center;
   }
 
@@ -2557,18 +2557,3 @@ button:focus-visible {
   0%, 30% { transform: rotate(0deg); }
   65%, 100% { transform: rotate(90deg); }
 }
-
-/* Investigation expansion: keyboard-accessible evidence decisions and transcript. */
-.edition-link {font-size: .8rem; margin: 1rem 0;}
-.edition-link a {color: #d9bd81;}
-.deduction-dialog {padding: clamp(20px, 4vw, 40px); max-height: 88dvh; overflow-y: auto;}
-.deduction-dialog h2 {font-size: 1.3rem;}
-.deduction-dialog > p {line-height: 1.8;}
-#deduction-choices {display: grid; gap: 12px; margin: 20px 0;}
-#deduction-choices button {white-space: normal; line-height: 1.7; min-height: 48px; text-align: left;}
-.history-section {margin: 24px 0; line-height: 1.9;}
-.history-section summary {cursor: pointer; color: #d9bd81;}
-#dialogue-history {max-height: 45vh; overflow-y: auto;}
-#dialogue-history p {padding-bottom: 12px; border-bottom: 1px solid #ffffff20;}
-
-#ending-note {white-space: pre-line;}
